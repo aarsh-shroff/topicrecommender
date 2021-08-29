@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %} Recommendations {% endblock title %} 
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+
+      <h1> Top Queries </h1>
+      {% for top_query in top_queries %}
+        {{ top_query | safe}}
+        <br>
+      {% endfor %}
+      
+      <h1> Rising Queries </h1>
+      {% for rising_query in rising_queries %}
+        {{ rising_query | safe}}
+        <br>
+      {% endfor %}
+
+      <h1> Top Topics </h1>
+      {% for top_topic in top_topics %}
+        {{ top_topic | safe}}
+        <br>
+      {% endfor %}
+
+      <h1> Rising Topics </h1>
+      {% for rising_topic in rising_topics %}
+        {{ rising_topics | safe}}
+        <br>
+      {% endfor %}
+      
+    </div>
+  </div>
+</div>
+{% endblock content %}
