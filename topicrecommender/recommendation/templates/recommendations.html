@@ -13,14 +13,14 @@
 
   <div class="row">
     <div class="col">
-      <h3> Top Content: </h3>
+      <h3 style="text-align:left"> Top Content: </h3>
       {% for top_query in top_queries %}
         {{ top_query | safe}}
         <br>
       {% endfor %}
     </div>
     <div class="col">
-      <h3> Rising Content: </h3>
+      <h3 style="text-align:left"> Rising Content: </h3>
       {% for rising_query in rising_queries %}
         {{ rising_query | safe}}
         <br>
