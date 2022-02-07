@@ -13,24 +13,24 @@ utc_offset = int(abs(utc_offset/60))
 pytrends = TrendReq(hl='en-US', tz=utc_offset)
 CATEGORIES = pytrends.categories()
 
-def related_queries(terms, geo):
+def related_queries(terms):
     related_queries = list()
     for term in terms:
-        pytrends.build_payload(kw_list=[term], timeframe='today 1-m', geo=geo)
+        pytrends.build_payload(kw_list=[term], timeframe='today 1-m')
         df = pytrends.related_queries()
         related_queries.append(df)
     return related_queries
 
-def related_topics(terms, geo):
+def related_topics(terms):
     related_topics = list()
     for term in terms:
-        pytrends.build_payload(kw_list=[term], timeframe='today 1-m', geo=geo)
+        pytrends.build_payload(kw_list=[term], timeframe='today 1-m')
         df = pytrends.related_topics()
         related_topics.append(df)
     return related_topics
 
 def get_recommendations(webpages):
     terms = main(webpages)
-    queries = related_queries(terms, 'GLOBAL')
-    topics = related_topics(terms, 'GLOBAL')
+    queries = related_queries(terms)
+    topics = related_topics(terms)
     return queries, topics, terms
