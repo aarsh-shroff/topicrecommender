@@ -5,13 +5,9 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h2>
-        Recommendations
-      </h2>
-      <p>
-        Here is some popular content that you could write about next. The "Top Content" is currently trending, and the 
-        "Rising Content" is currently rising in popularity
-      </p>
+      <h2> Recommendations </h2>
+      <p> Here is some popular content that you could write about next. The "Top Content" is currently trending, and the 
+      "Rising Content" is currently rising in popularity </p>
     </div>
   </div>
 
@@ -22,12 +18,14 @@
         {{ top_query | safe}}
         <br>
       {% endfor %}
+    </div>
     <div class="col">
       <h3> Rising Content: </h3>
       {% for rising_query in rising_queries %}
         {{ rising_query | safe}}
         <br>
       {% endfor %}
+    </div>
   </div>
 
   <div class="row">
