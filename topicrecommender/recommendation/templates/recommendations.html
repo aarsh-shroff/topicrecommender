@@ -4,33 +4,28 @@
 {% block content %}
 <div class="container">
   <div class="row">
-    <div class="col-sm">
-
-      <h1> Top Queries </h1>
+    <h2> Recommendations </h2>
+    <p> Here is some popular content that you could write about next </p>
+    <div class="col-6">
+      <h3> Top Content: </h3>
       {% for top_query in top_queries %}
         {{ top_query | safe}}
         <br>
       {% endfor %}
-      
-      <h1> Rising Queries </h1>
+    <div class="col-6">
+      <h3> Rising Content: </h3>
       {% for rising_query in rising_queries %}
         {{ rising_query | safe}}
         <br>
       {% endfor %}
-
-      <h1> Top Topics </h1>
-      {% for top_topic in top_topics %}
-        {{ top_topic | safe}}
-        <br>
-      {% endfor %}
-
-      <h1> Rising Topics </h1>
-      {% for rising_topic in rising_topics %}
-        {{ rising_topics | safe}}
-        <br>
-      {% endfor %}
-      
-    </div>
+  </div>
+  <div class="row">
+    <p> The Topic Recommender extracted these keywords from your website using latent Dirichilet allocation.
+    Using these keywords, the Topic Recommender provides recommendations </p>
+    {% for keyword in keywords %}
+      {{ keyword }}
+      <br>
+    {% endfor %} 
   </div>
 </div>
 {% endblock content %}

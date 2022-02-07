@@ -26,8 +26,6 @@ def recommendations(request):
     recommendations = get_recommendations(webpages_list)
     top_queries = list()
     rising_queries = list()
-    top_topics = list()
-    rising_topics = list()
 
     for i in range(len(recommendations[0])):
         kw = (next(iter(recommendations[0][i])))
@@ -36,15 +34,17 @@ def recommendations(request):
         if recommendations[0][i][kw]['rising'] is not None:
             rising_queries.append(recommendations[0][i][kw]['rising'].to_html())
     
+    '''
     for i in range(len(recommendations[1])):
         kw = (next(iter(recommendations[1][i])))
         if recommendations[1][i][kw]['top'] is not None:
             top_topics.append(recommendations[1][i][kw]['top'].to_html(columns=['topic_title', 'topic_type', 'formattedValue']))
         if recommendations[1][i][kw]['rising'] is not None:
             rising_topics.append(recommendations[1][i][kw]['rising'].to_html(columns=['topic_title', 'topic_type', 'formattedValue']))
-    
+    '''
+
     context_dict = {'top_queries': top_queries, 
                     'rising_queries': rising_queries,
-                    'top_topics': top_topics,
-                    'rising_topics': rising_topics}
+                    'keywords': recommendations[2]}
+    
     return render(request, 'recommendations.html', context_dict)

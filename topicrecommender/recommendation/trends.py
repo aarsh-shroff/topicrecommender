@@ -31,6 +31,6 @@ def related_topics(terms, geo):
 
 def get_recommendations(webpages):
     terms = main(webpages)
-    queries = related_queries(terms, 'US')
-    topics = related_topics(terms, 'US')
-    return queries, topics
+    queries = related_queries(terms, 'GLOBAL')
+    topics = related_topics(terms, 'GLOBAL')
+    return queries, topics, terms

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block title %} The Topic Recommender {% endblock title %} 
+{% load static %}
 
 {% block content %}
 <!-- Marketing messaging and featurettes
@@ -11,12 +12,10 @@
   <div class="row">
     <div class="col">
       <h2>
-        The Topic Recommender can recommend you content specific to your blog
-        that will increase your traffic
+        The Topic Recommender: Find Content That Will Increase Your Traffic
       </h2>
       <p>
-        Just enter five URLs from your blog that represent your general content
-        and your niche.
+        Simply enter five URLs from your website that represent your overall content.
       </p>
     </div>
   </div>
@@ -31,97 +30,7 @@
     </div>
   </div>
 
-  <!-- Three columns of text below the carousel -->
-  <div class="row">
-    <div class="col-lg-4">
-      <svg
-        class="bd-placeholder-img rounded-circle"
-        width="140"
-        height="140"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-        role="img"
-        aria-label="Placeholder: 140x140"
-      >
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#777" />
-        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-      </svg>
-      <h2>Heading</h2>
-      <p>
-        Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.
-        Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus,
-        porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus
-        magna.
-      </p>
-      <p>
-        <a class="btn btn-secondary" href="#" role="button"
-          >View details &raquo;</a
-        >
-      </p>
-    </div>
-    <!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <svg
-        class="bd-placeholder-img rounded-circle"
-        width="140"
-        height="140"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-        role="img"
-        aria-label="Placeholder: 140x140"
-      >
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#777" />
-        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-      </svg>
-      <h2>Heading</h2>
-      <p>
-        Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
-        lacinia odio sem nec elit. Cras mattis consectetur purus sit amet
-        fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-        condimentum nibh.
-      </p>
-      <p>
-        <a class="btn btn-secondary" href="#" role="button"
-          >View details &raquo;</a
-        >
-      </p>
-    </div>
-    <!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <svg
-        class="bd-placeholder-img rounded-circle"
-        width="140"
-        height="140"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-        role="img"
-        aria-label="Placeholder: 140x140"
-      >
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#777" />
-        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-      </svg>
-      <h2>Heading</h2>
-      <p>
-        Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas
-        eget quam. Vestibulum id ligula porta felis euismod semper. Fusce
-        dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-        fermentum massa justo sit amet risus.
-      </p>
-      <p>
-        <a class="btn btn-secondary" href="#" role="button"
-          >View details &raquo;</a
-        >
-      </p>
-    </div>
-    <!-- /.col-lg-4 -->
-  </div>
-  <!-- /.row -->
+  
 
   <!-- START THE FEATURETTES -->
 
@@ -130,35 +39,17 @@
   <div class="row featurette">
     <div class="col-md-7">
       <h2 class="featurette-heading">
-        First featurette heading.
-        <span class="text-muted">It’ll blow your mind.</span>
+        Latent Dirichlet Allocation.
+        <span class="text-muted">Topic Modeling Algorithm.</span>
       </h2>
       <p class="lead">
-        Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula
-        porta felis euismod semper. Praesent commodo cursus magna, vel
-        scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        Latent Dirichlet Allocation (LDA) is a popular topic modeling algorithm in natural language processing. The 
+        aim of Latent Dirichlet Allocation is to find the different topics that a document belongs to, based on 
+        the words in the document. The Topic Recommender uses LDA to match your content with various topics.
       </p>
     </div>
     <div class="col-md-5">
-      <svg
-        class="
-          bd-placeholder-img bd-placeholder-img-lg
-          featurette-image
-          img-fluid
-          mx-auto
-        "
-        width="500"
-        height="500"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-        role="img"
-        aria-label="Placeholder: 500x500"
-      >
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#eee" />
-        <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-      </svg>
+      <img src="{% static 'lda_image.PNG' %}" alt="LDA" width="500" height="500">
     </div>
   </div>
 
@@ -167,35 +58,18 @@
   <div class="row featurette">
     <div class="col-md-7 order-md-2">
       <h2 class="featurette-heading">
-        Oh yeah, it’s that good.
-        <span class="text-muted">See for yourself.</span>
+        Term Frequency-Inverse Document Frequency.
+        <span class="text-muted">Information Retrieval Algorithm.</span>
       </h2>
       <p class="lead">
-        Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula
-        porta felis euismod semper. Praesent commodo cursus magna, vel
-        scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        Term Frequency-Inverse Document Frequency, more commonly known as TF-IDF, is a statistical algorithm 
+        that weighs how important a word is to a whole document or a set of documents. It considers how many 
+        times a word appears in a document, and the inverse document frequency of the word. The Topic Recommender 
+        uses TF-IDF to calculate the keywords sent to Google Trends.
       </p>
     </div>
-    <div class="col-md-5 order-md-1">
-      <svg
-        class="
-          bd-placeholder-img bd-placeholder-img-lg
-          featurette-image
-          img-fluid
-          mx-auto
-        "
-        width="500"
-        height="500"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-        role="img"
-        aria-label="Placeholder: 500x500"
-      >
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#eee" />
-        <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-      </svg>
+    <div class="col-md-5">
+      <img src="{% static 'tfidf_image.png' %}" alt="TF-IDF" width="400" height="500">
     </div>
   </div>
 
@@ -204,34 +78,16 @@
   <div class="row featurette">
     <div class="col-md-7">
       <h2 class="featurette-heading">
-        And lastly, this one. <span class="text-muted">Checkmate.</span>
+        PyTrends. <span class="text-muted">Google Trends API.</span>
       </h2>
       <p class="lead">
-        Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula
-        porta felis euismod semper. Praesent commodo cursus magna, vel
-        scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+        PyTrends is an unnofficial API for Google Trends. It allows the user to access data from 
+        Google Trends when given a payload with one or more keywords. The Topic Recommender uses 
+        PyTrends to find "trending" content.
       </p>
     </div>
     <div class="col-md-5">
-      <svg
-        class="
-          bd-placeholder-img bd-placeholder-img-lg
-          featurette-image
-          img-fluid
-          mx-auto
-        "
-        width="500"
-        height="500"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-        role="img"
-        aria-label="Placeholder: 500x500"
-      >
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#eee" />
-        <text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-      </svg>
+      <img src="{% static 'PyTrends.png' %}" alt="PyTrends" width="500" height="500">
     </div>
   </div>
 
